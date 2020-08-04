@@ -1,16 +1,18 @@
 @font-face {
-    font-family: 'BMDOHYEON';
-    src: url(BMDOHYEON_ttf.ttf) format('truetype');
+    font-family: '-윤고딕523';
+    src: url(-윤고딕530.ttf) format('truetype');
    }
+
+
+
    
-
-
-
 /*---------------------------------------------header---------------------------------------------------*/
+
+
 a{text-decoration: none;}
 li{list-style: none; float: left;}
 
-body{ margin: 0 auto; max-width: 1400px;font-family:BMDOHYEON, NanumGothic, Dotum,"돋움",Gulim,"굴림",Verdana,Tahoma,Apple Gothic,sans-serif,UnDotum; font-size:12px !important; }
+body{ margin: 0 auto; max-width: 1400px;font-family:-윤고딕520,BMDOHYEON,NanumGothic, Dotum,"돋움",Gulim,"굴림",Verdana,Tahoma,Apple Gothic,sans-serif,UnDotum; font-size:12px !important; }
 
 
 
