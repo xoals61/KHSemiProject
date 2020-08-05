@@ -55,9 +55,43 @@
       .btn {
         margin: 0 5px;
       }
+      @keyframes watch {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          transform: translate(-2px, -2px);
+        }
+        60% {
+          transform: translate(2px, 2px);
+        }
+        80% {
+          transform: translate(2px, -2px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+      .time {
+        width: 100px;
+        height: 100px;
+        animation: watch 200ms linear infinite both;
+        position: absolute;
+        top: 286px;
+        left: 490px;
+        z-index: 1;
+      }
+
+      .time:hover {
+        animation-play-state: paused;
+      }
     </style>
   </head>
   <body>
+    <img src="/images/alarm.png" alt="alarm" class="time" />
     <div id="main-header">
       <div class="main-header-logo">
         <a href="#"><img src="./images/semiLogosize.png" /></a>
