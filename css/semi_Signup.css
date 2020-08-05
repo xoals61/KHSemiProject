@@ -1,0 +1,45 @@
+
+
+
+#signup {
+    float: left;
+    min-width: 1000px;
+    margin-top: 5%;
+    
+}
+#signup form{
+    border: solid 1px #a7a9ab;
+    border-radius: 0.5rem;
+ margin:auto;
+ width: fit-content;
+ padding: 3%;
+}
+
+#signup ul{
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+}
+
+#signup label, input{
+    display: inline-block;
+
+
+}
+#signup label{
+    width: 150px;
+    margin-top: 15px;
+}
+#signup ul input{
+    width: 200px;
+}
+#btn{
+
+    width: fit-content;
+    margin: auto;
+}
+#btn input{
+    background-color: #418dc0;
+    color: #ffffff;
+}
