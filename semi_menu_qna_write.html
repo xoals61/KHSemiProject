@@ -7,23 +7,53 @@
     <link rel="stylesheet" href="./css/semi_comu.css" />
 
     <link rel="stylesheet" href="./css/semi_menu_qna.css" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
       .testbox {
-        width: 1100px;
-        height: 100%;
-        background-color: red;
+        width: 100%;
+        min-height: 500px;
+        /* background-color: blue; */
         float: right;
+        clear: left;
+        margin: 20px;
       }
 
-      #container {
-        /* position: relative; */
+      #con1 {
+        display: flex;
+        position: relative;
         width: 100%;
-        /* float: right;
-        clear: left; */
-        margin: 0 auto;
-        background-color: black;
-        /* letter-spacing: -0.2px; */
+        height: 100%;
+        /* background-color: pink; */
+      }
+
+      a {
+        color: black;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      table {
+        border-collapse: collapse;
+      }
+
+      table,
+      th,
+      td {
+        border-bottom: 1px solid black;
+        padding: 10px;
+      }
+
+      .paging {
+        text-align: left;
+
+        padding: 10px;
+      }
+
+      .btns {
+      }
+      .btn {
+        margin: 0 5px;
       }
     </style>
   </head>
@@ -39,15 +69,13 @@
       </ul>
 
       <ul class="main-header-navi">
-        <li><a href="#">test</a></li>
+        <li><a href="#">기사</a></li>
         <li><a href="#">산업기사</a></li>
         <li><a href="#">기능사</a></li>
       </ul>
     </div>
-
     <div id="main-box1"></div>
-
-    <div id="container">
+    <section id="con1">
       <div class="left-menu">
         <ul id="left-menu-share" class="left-menu1">
           <li>
@@ -91,12 +119,40 @@
           </li>
         </ul>
       </div>
-      <div class="testbox"></div>
-    </div>
-    asdasd
-
-    <div style="width: 100px; height: 100px; background-color: red;"></div>
-    asdasdsa
+      <div class="testbox">
+        <div class="tablebox">
+          <form action="">
+            <table
+              class="table"
+              border="0"
+              style="padding: 0; margin: 0; min-width: 1000px;"
+            >
+              <h1>오류신고</h1>
+              <thead>
+                <tr style="text-align: left;">
+                  <th>게시글 작성</th>
+                </tr>
+              </thead>
+              <tbody style="">
+                <tr style="">
+                  <td>제목 <input type="text" /></td>
+                </tr>
+                <tr>
+                  <td>
+                    <textarea name="" id="" cols="110" rows="13"></textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="paging"></div>
+            <div class="btns">
+              <input type="button" value="목록" class="btn writeBtn" />
+              <input type="submit" value="확인" class="btn writeBtn" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   </body>
   <footer id="main-footer">
     <div class="main-footer-wrap">
