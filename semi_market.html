@@ -1,10 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>C4U 너만의 기사</title>
+    <link rel="stylesheet" href="./css/semi_main_frame.css">
+    <link rel="stylesheet" href="./css/semi_market.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+<div id="main-header">
+    <div class="main-header-logo"><a href="#"><img src="./images/semiLogosize.png" /></a></div>
+    <ul id='BeforeLogin' class="main-header-login">
+        <li><a href="#">로그인</a></li>
+        <li><span>|</span><a href="/#">회원가입</a></li>
+        <li><span>|</span><a href="/#">고객센터</a></li>
+    </ul>
+
+    <ul class="main-header-navi">
+        <li><a href="#">기사</a></li>
+        <li><a href="#">산업기사</a></li>
+        <li><a href="#">기능사</a></li>
+    </ul>
+
+</div>
+
+<div id="main-box1"></div>
+
+
+
+<!----------------------------------------------------------------------------------------------------->
+<section class="section_wrapper">
+<div class ="left_wrapper">
+    <div class="left-menu">
+        <ul id="left-menu-share" class="left-menu1">
+
+            <li>
+                <dl>
+                    <dt>
+                        <div class="left-menu-name">게시판</div>
+                    </dt>
+                </dl>
+            </li>
+            <div class="menu-line"></div>
+            <li>
+                <dl>
+                    <dt>
+                        <div>커뮤니티</div>
+                    </dt>
+                    <dd><a href="#">- 기사</a></dd>
+                    <dd><a href="#">- 산업기사</a></dd>
+                    <dd><a href="#">- 기능사</a></dd>
+                </dl>
+            </li>
+            <div class="menu-line"></div>
+            <li>
+                <dl>
+                    <dt>
+                        <div>장터</div>
+                    </dt>
+                    <dd><a href="#">- 삽니다</a></dd>
+                    <dd><a href="#">- 팝니다</a></dd>
+                </dl>
+            </li>
+            <div class="menu-line"></div>
+            <li>
+                <dl>
+                    <dt>
+                        <div>고객센터</div>
+                    </dt>
+                    <dd><a href="#">- 자주 묻는 질문</a></dd>
+                    <dd><a href="#">- 1:1문의</a></dd>
+                    <dd><a href="#">- 신고</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- --------------------------------------장터 글쓰기------------------------------------------------------>
+
+    <div id="write" class ="right_wrapper">
+        <h1 style=" font-size: 30px; text-align: center;">글쓰기</h1>
+        <hr>
+
+
+        <form>
+            <div>
+
+                <label>제목 :</label>
+                <input type="text" placeholder="제목을 입력하세요." name="title" style="padding:5px 100px 0px 10px;">
+
+                <select id="ad">
+                    <option value="none" style="font-size: 3px">---판매 상태---</option>
+                    <option value="sale">판매중</option>
+                    <option value="complete">판매완료</option>
+                </select>
+                <br>
+
+            </div>
+
+            <label id="content1">내용 :</label>
+            <textarea cols="10" placeholder="내용을 입력하세요." name="content" style="resize: none; width: 800px; height: 300px" > </textarea><br>
+            <input type="file" placeholder="파일을 선택하세요. " name="filename"/>
+
+
+
+
+
+        </form>
+    </div>
+</section>
+
+
+
+
+<div style="clear: both"></div>
+
+
+
+
+<div id="main-footer">
+    <div class="main-footer-wrap">
+        <div><img src="./images/semiLogosize.png"/></div>
+        <div>
+            <ul>
+                <li>고객센터 1544 – 1004 (평일 9:00 ~ 12:30, 13:30 ~ 18:00)  help@c4you.com</li>
+                <li><span>㈜합격하조</span>   <span>대표이사 유승제</span>   <span>사업자 등록번호 1004-1004</span> </li>
+                <li>서울시 강남구 역삼대로</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
