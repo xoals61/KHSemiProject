@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>C4U 너만의 기사</title>
+
+    <link rel="stylesheet" href="./css/semi_main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script language="JavaScript">
+        //  제이쿼리 사용
+        $(document).ready(function () {
+            var $banner = $(".banner").find("ul");
+
+            var $bannerWidth = $banner.children().outerWidth();//이미지의 폭
+            var $bannerHeight = $banner.children().outerHeight(); // 높이
+            var $length = $banner.children().length;//이미지의 갯수
+            var rollingId;
+
+            var $btnprev = $(".banner .btn_prev");
+            var $btnnext = $(".banner .btn_next");
+            $banner.css("left", -$bannerWidth)
+
+
+            //정해진 초마다 함수 실행
+            rollingId = setInterval(function () { rollingStart(); }, 5000);//다음 이미지로 롤링 애니메이션 할 시간차
+
+            function prevItem() {
+                clearInterval(rollingId);
+                $banner.css("width", $bannerWidth * $length + "px");
+                $banner.css("height", $bannerHeight + "px");
+
+
+
+                $banner.animate({ left: 0 + "px" }, 1500, function () { //숫자는 롤링 진행되는 시간이다.
+                    $(this).prepend("<li>" + $(this).find("li:last").html() + "</li>");
+                    $(this).find("li:last").remove();
+                    $(this).css("left", -$bannerWidth);
+
+                });
+
+                rollingId = setInterval(function () { rollingStart(); }, 5000);
+
+
+            }
+
+            function nextItem() {
+                clearInterval(rollingId);
+                $banner.css("width", $bannerWidth * $length + "px");
+                $banner.css("height", $bannerHeight + "px");
+
+                $banner.animate({ left: - ($bannerWidth * 2) + "px" }, 1500, function () { //숫자는 롤링 진행되는 시간이다.
+
+                    $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+                    //뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+                    $(this).find("li:first").remove();
+                    //다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+                    $(this).css("left", -$bannerWidth);
+                    //이 과정을 반복하면서 계속 롤링하는 배너를 만들 수 있다.
+                });
+
+                rollingId = setInterval(function () { rollingStart(); }, 5000);
+            }
+
+            $btnnext.on('click', nextItem);
+            $btnprev.on('click', prevItem);
+
+
+
+
+
+            function rollingStart() {
+                $banner.css("width", $bannerWidth * $length + "px");
+                $banner.css("height", $bannerHeight + "px");
+                //배너의 좌측 위치를 옮겨 준다.
+                $banner.animate({ left: - ($bannerWidth * 2) + "px" }, 1500, function () { //숫자는 롤링 진행되는 시간이다.
+                    //첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가한다.
+                    $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+                    //뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+                    $(this).find("li:first").remove();
+                    //다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+                    $(this).css("left", -$bannerWidth);
+                    //이 과정을 반복하면서 계속 롤링하는 배너를 만들 수 있다.
+                });
+            }
+        });
+    </script>
+    <style>
+        html,
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            /* margin: 0; */
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .panel-question {
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        .panel-heading {
+            font-weight: bold;
+            padding: 24px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .panel-body {
+            padding: 40px;
+            font-size: 18px;
+        }
+
+        #btn-collapse {
+            margin-bottom: 10px;
+            background-color: #999;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 5px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-header">
+        <div class="main-header-logo"><a href="#"><img src="./images/semiLogosize.png" /></a></div>
+        <ul class="main-header-navi">
+            <li><a href="#">기사</a></li>
+            <li><a href="#">산업기사</a></li>
+            <li><a href="#">기능사</a></li>
+        </ul>
+        <ul id='BeforeLogin' class="main-header-login">
+            <li><a href="/#">로그인</a></li>
+            <li><span>|</span><a href="/#">회원가입</a></li>
+            <li><span>|</span><a href="/#">고객센터</a></li>
+        </ul>
+
+        <ul id='search' class="main-header-search">
+            <form id='search' name="search">
+                <li> <input type='text' id='search' name='search' placeholder='키워트를 입력하세요' /></li>
+                <li> <button type="submit" id="search-btn">검색</button></li>
+
+            </form>
+    </div>
+
+
+
+    <div class="contents">
+        <div class="banner">
+            <ul>
+                <li><img src="./images/배너1.png" width="1200" height="210px"></li>
+                <li><img src="./images/배너2.png" width="1200" height="210px"></li>
+                <li><img src="./images/배너3.png" width="1200" height="210px"></li>
+                <li><img src="./images/배너4.png" width="1200" height="210px"></li>
+            </ul>
+            <a class="btn_prev" href="#">◀</a>
+            <a class="btn_next" href="#">▶</a>
+        </div>
+    </div>
+    <div class="container">
+        <button id="btn-collapse">모두 접기</button>
+        <h2>자주 묻는 질문</h2>
+        <section id="faq">
+            <div class="panel-question active">
+                <div class="panel-heading">
+                    그래프 '방문수'의 기준은 무엇인가요?
+                </div>
+                <div class="panel-body" id="thisone">
+                    <p>블로그관리 홈은 일종의 대시보드로서, 내 블로그의 전반적인 상황을 관찰할 수 있습니다. 그 중 방문 수 그래프는 내 블로그, 내 글의 일별 '페이지 뷰'를 실시간에 가깝게 제공합니다. 방문 수 및 추이 그래프는 우측 상단에 표시된 시각을 기준으로 노출되는 점 참고 바랍니다.</p>
+                </div>
+            </div>
+
+            <div class="panel-question">
+                <div class="panel-heading">
+                    누적 블로그 방문 수에 변화가 생겼습니다.
+                </div>
+                <div class="panel-body">
+                    <p>새로운 블로그 관리와 통계를 제공하면서, 통계를 수집하는 기준에도 변경이 됐습니다. 비교적 최근 기간인 2018년 1월 1일의 통계부터는 '방문 수 = 페이지 뷰'로 소급 적용시키다보니 일부 블로그의 방문 수에 변화가 있을 수 있습니다.</p>
+                </div>
+            </div>
+
+            <div class="panel-question">
+                <div class="panel-heading">
+                    그래프의 날짜를 눌러서 그 날짜의 통계를 정보를 자세히 보고 싶어요.
+                </div>
+                <div class="panel-body">
+                    <p>블로그관리 홈의 방문 수 그래프는 일별 방문 수 추이를 보여줍니다. 일별, 주별, 월별 자세한 통계를 원하시면 우측 상단의 방문 통계를 눌러 '블로그 통계"로 먼저 진입하신 후, 특정 날짜나 기간을 설정하시면 됩니다.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        var btnCollapse = document.getElementById('btn-collapse'),
+            heading = document.getElementsByClassName('panel-heading'),
+            question = document.getElementsByClassName('panel-question'),
+            answer = document.getElementsByClassName('panel-body');
+
+        //제목을 클릭하면 할일 heading[0]~[2]
+        for (var i = 0; i < heading.length; i++) {
+            heading[i].addEventListener('click', function (ev) {
+                for (var j = 0; j < question.length; j++) {
+                    question[j].classList.remove('active');
+                    ev.target.parentNode.classList.add('active');
+                    activateBody();
+                }//question마다 할 일
+            });
+        }
+
+        function activateBody() {
+            // panel-body 모두 안보이도록 answer, display:none;
+            for (var x = 0; x < heading.length; x++) {
+                answer[x].style.display = 'none';
+            }
+
+            //클래스명 active panel-question 자식 중 panel-body 나타나도록
+            // .panel-question.active .panel-body
+            var activePanel = document.querySelector('.panel-question.active .panel-body');
+            activePanel.style.display = "block";
+        }
+        activateBody(); //처음에 시작하도록
+
+        //collapse all 버튼을 클릭하면 모든 answer 안보이도록 한다.
+        btnCollapse.addEventListener('click', function () {
+            for (var x = 0; x < heading.length; x++) {
+                answer[x].style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
