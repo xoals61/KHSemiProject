@@ -3,6 +3,12 @@
 
 
 /*---------셀렉트--------------*/
+.section_wrapper{
+    width: 95%;
+    height: 70%;
+    display: flex;
+}
+
 #ad {
     width: 150px;
     padding: .8em .5em;
@@ -15,7 +21,7 @@
     appearance: none;
     margin-left: 80px;
     margin-bottom: 10px;
-    height: 27px;
+    height: 38px;
 }
 
 #ad::-ms-expand {
@@ -28,12 +34,41 @@
     margin : 0px;
 }
 .right_wrapper {
-    float: left;
     width : 880px;
     /*margin-left: 300px;*/
 }
 
 #content1 {
 
+}
+
+
+/*   취소/등록 버튼    */
+
+#cancel{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-right: -4px;
+}
+
+#submit{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: -3px;
+}
+
+#btn_group button{
+    border: 1px solid skyblue;
+    background-color: rgba(0,0,0,0);
+    color: skyblue;
+    padding: 5px;
+}
+
+#btn_group button:hover{
+    color: white;
+    background-color: skyblue;
+}
+#btn_group button:focus{
+    outline:none;
 }
 
