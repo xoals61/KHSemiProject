@@ -2,7 +2,7 @@
 .notice td{text-align: center;}
 .posting td{text-align: center;}
 
-.semi-comu-gisa{margin-top: 10px; max-width: 1000px;}
+.semi-comu-gisa{margin-top: 10px; max-width: 1000px; min-height: 545px;}
 
 #page-title{font-size: 26px; padding: 10px 0 10px 0;}
 .page-guide{font-size: 17px; border-radius:10px; border: 2px solid rgb(209, 49, 49); width: 1000px; float: left; height: 28px; text-align: center; padding-top: 7px;}
