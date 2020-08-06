@@ -30,7 +30,7 @@
       a {
         color: black;
       }
-      a:hover {
+      table > a:hover {
         text-decoration: underline;
       }
       table {
@@ -48,6 +48,10 @@
         text-align: left;
 
         padding: 10px;
+      }
+
+      textarea {
+        resize: none;
       }
 
       .btns {
@@ -87,6 +91,16 @@
 
       .time:hover {
         animation-play-state: paused;
+      }
+      .btns {
+        /* vertical-align: middle; */
+      }
+      .writeBtn {
+        text-align: right;
+        border: 1px solid black;
+        background: lightgray;
+        padding: 6px 12px;
+        border-radius: 4px;
       }
     </style>
   </head>
@@ -147,8 +161,8 @@
                 <div>고객센터</div>
               </dt>
               <dd><a href="#">- 자주 묻는 질문</a></dd>
-              <dd><a href="#">- 1:1문의</a></dd>
-              <dd><a href="#">- 신고</a></dd>
+              <dd><a href="mailto:bs_khm@naver.com">- 1:1문의</a></dd>
+              <dd><a href="/semi_menu_qna.html">- 신고</a></dd>
             </dl>
           </li>
         </ul>
@@ -169,18 +183,28 @@
               </thead>
               <tbody style="">
                 <tr style="">
-                  <td>제목 <input type="text" /></td>
+                  <td>제목 <input type="text" style="width: 500px;" /></td>
                 </tr>
                 <tr>
                   <td>
-                    <textarea name="" id="" cols="110" rows="13"></textarea>
+                    <p>신고 내용</p>
+                    <textarea
+                      name=""
+                      id=""
+                      cols="110"
+                      rows="13"
+                      maxlength="1200"
+                    ></textarea>
+                    <input type="file" accept="image/*" />
                   </td>
                 </tr>
               </tbody>
             </table>
             <div class="paging"></div>
             <div class="btns">
-              <input type="button" value="목록" class="btn writeBtn" />
+              <a href="semi_menu_qna.html"
+                ><input type="button" value="목록" class="btn writeBtn" / ></a
+              >
               <input type="submit" value="확인" class="btn writeBtn" />
             </div>
           </form>
