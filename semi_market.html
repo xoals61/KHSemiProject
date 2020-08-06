@@ -99,8 +99,8 @@
 
             </div>
 
-<!--            <label id="content1">내용 :</label>-->
-            <textarea cols="10" placeholder="내용을 입력하세요." name="content" style="resize: none; width: 800px; height: 300px" > </textarea><br>
+            <textarea  name="content" style="width: 800px; height: 300px" > </textarea>
+            <br>
             <input type="file" placeholder="파일을 선택하세요. " name="filename"/>
 
 
@@ -110,6 +110,7 @@
 
 <!-- 취소/등록 버튼 -->
      <div id="btn_group">
+
          <button id="cancel">취소</button>
          <button id="submit">등록</button>
 
@@ -133,7 +134,7 @@
 
 
 
-<dv id="main-footer">
+<div id="main-footer">
     <div class="main-footer-wrap">
         <div><img src="./images/semiLogosize.png"/></div>
         <div>
@@ -148,4 +149,29 @@
 
 
 </body>
+<script>
+    var semi_market = {
+        init : function() {
+            var _this = this;
+            $("#cancel").click(function() {
+                _this.cancel_alert();
+            });
+            $("#submit").click(function() {
+                _this.submit_alert();
+            });
+        },
+        cancel_alert : function () {
+            alert('취소함다.');
+        },
+        submit_alert : function() {
+            // location.href ="./semi_main.html";
+            alert('제출함다.');
+        }
+    };
+    semi_market.init();
+
+
+
+
+</script>
 </html>
