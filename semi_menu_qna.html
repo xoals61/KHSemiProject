@@ -30,17 +30,6 @@
         height: 100%;
         /* background-color: pink; */
       }
-      .notice-qnabox {
-        border: 1px solid rgb(255, 162, 177);
-        padding: 3px 4px;
-        border-radius: 4px;
-        background-color: pink;
-        color: red;
-      }
-
-      .notice-qna {
-        color: red;
-      }
 
       a {
         color: black;
@@ -70,6 +59,26 @@
       }
 
       .table {
+      }
+
+      .noticebody {
+        background: hsl(240, 12%, 94%);
+      }
+
+      .postsbody {
+        background: white;
+      }
+
+      .notice-qnabox {
+        border: 1px solid rgb(255, 162, 177);
+        padding: 3px 4px;
+        border-radius: 4px;
+        background-color: pink;
+        color: red;
+      }
+
+      .notice-qna {
+        color: red;
       }
 
       .testbox {
@@ -109,8 +118,20 @@
         border-radius: 4px;
       }
 
-      .searchbox-qna {
+      .search-qna {
         margin-top: 10px;
+      }
+      #search-qna-sel {
+        vertical-align: middle;
+      }
+
+      .search-qna-btn {
+        vertical-align: middle;
+      }
+
+      .search-qna-bar {
+        vertical-align: middle;
+        width: 200px;
       }
     </style>
 
@@ -136,7 +157,7 @@
     </div>
     <div id="main-box1"></div>
     <section id="con1">
-      <div class="left-menu">
+      <div class="left-menu" style="max-height: 500px;">
         <ul id="left-menu-share" class="left-menu1">
           <li>
             <dl>
@@ -198,8 +219,8 @@
                 <th>날짜</th>
               </tr>
             </thead>
-            <tbody style="">
-              <tr style="background: hsl(240, 12%, 94%);">
+            <tbody class="noticebody">
+              <tr style="">
                 <td style="width: 8%;">
                   <div class="notice-qnabox">공지</div>
                 </td>
@@ -213,8 +234,8 @@
                 <td style="width: 15%;">2020.08.06</td>
               </tr>
             </tbody>
-            <tbody style="">
-              <tr style="background: ghostwhite;">
+            <tbody class="postsbody">
+              <tr style="">
                 <td style="width: 5%;">1</td>
                 <td style="width: 60%; text-align: left; text-indent: 10px;">
                   <a href="#"> 안녕하세요 감사해요 잘있어요 다시만나요</a>
@@ -238,8 +259,13 @@
             <a href="#" class="fas fa-angle-double-right"></a>
           </div>
           <div class="searchbox-qna">
-            <input type="text" class="search-qna" />
-            <input type="submit" value="검색" />
+            <select name="" id="search-qna-sel">
+              <option value="제목+내용">제목+내용</option>
+              <option value="제목+내용">제목</option>
+              <option value="제목+내용">내용</option>
+            </select>
+            <input type="text" class="search-qna-bar" />
+            <input type="submit" value="검색" class="search-qna-btn" />
           </div>
           <div class="btns">
             <a href="/semi_menu_qna_write.html" class="btn writeBtn">글쓰기</a>
