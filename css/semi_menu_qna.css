@@ -84,10 +84,21 @@ body {
 
 #main-box1 {
   background-color: rgb(96, 160, 211);
+  display: flex;
   height: 55px;
   width: 100%;
+  justify-content: center;
 }
 
+.main-box1-title {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.main-box1-title > li {
+}
 /*-------------------------------------------------------------------------------------------------------------------*/
 .left-menu {
   min-height: 500px;
