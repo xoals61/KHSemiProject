@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>C4U 너만의 기사</title>
+
+    <link rel="stylesheet" href="./css/semi_comu.css" />
+
+    <link rel="stylesheet" href="./css/semi_menu_qna.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      .testbox {
+        width: 100%;
+        min-height: 500px;
+        /* background-color: blue; */
+        float: right;
+        clear: left;
+        margin: 20px;
+      }
+
+      #con1 {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        /* background-color: pink; */
+      }
+
+      ul {
+        padding: 0;
+      }
+      a {
+        color: black;
+      }
+      table > a:hover {
+        text-decoration: underline;
+      }
+      table {
+        border-collapse: collapse;
+      }
+
+      table,
+      th,
+      td {
+        /* border-bottom: 1px solid black; */
+        padding: 10px;
+        font-family: sans-serif;
+      }
+
+      .paging {
+        text-align: left;
+
+        padding: 10px;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      .btn {
+        margin: 0 5px;
+      }
+      @keyframes watch {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          transform: translate(-2px, -2px);
+        }
+        60% {
+          transform: translate(2px, 2px);
+        }
+        80% {
+          transform: translate(2px, -2px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+      .time {
+        width: 100px;
+        height: 100px;
+        animation: watch 180ms linear infinite both;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+      }
+
+      .time:hover {
+        animation-play-state: paused;
+      }
+      .btns {
+        margin-top: 50px;
+        text-align: center;
+        /* margin-left: 820px; */
+        display: flex;
+        justify-content: flex-end;
+        /* justify-content: center; */
+      }
+      .writeBtn {
+        background-color: blanchedalmond;
+        padding: 10px 20px;
+        border-radius: 2px;
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 500;
+        width: 100px;
+      }
+
+      .writeBtn .fas {
+        vertical-align: auto;
+        font-size: 18px;
+      }
+
+      .user-name {
+        font-size: 20px;
+        font-weight: bolder;
+        vertical-align: top;
+      }
+
+      .user-name-comment {
+        font-size: 18px;
+        font-weight: bolder;
+        vertical-align: top;
+      }
+
+      .comment-text {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        font-size: 15px;
+      }
+
+      .date1 {
+        color: #979797;
+      }
+
+      .comment > img {
+        margin-right: 10px;
+        background: lightgray;
+        border-radius: 50%;
+      }
+
+      .comment {
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 10px;
+      }
+
+      .comment-btn {
+        text-align: right;
+      }
+      
+      .comment-btn > input{
+        padding: 6px 16px;
+        margin-right: 10px;
+      }
+
+      .comment-write{
+        border: lightgray 3px solid;
+        min-height: 100px;
+        min-width: 1000px;
+        border-radius: 8px;
+      }
+
+      .post-content{
+        padding: 10px;
+        min-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./images/alarm.png" alt="alarm" class="time" />
+    <div id="main-header">
+      <div class="main-header-logo">
+        <a href="#"><img src="./images/semiLogosize.png" /></a>
+      </div>
+      <ul id="BeforeLogin" class="main-header-login">
+        <li><a href="#">로그인</a></li>
+        <li><span>|</span><a href="/#">회원가입</a></li>
+        <li><span>|</span><a href="/#">고객센터</a></li>
+      </ul>
+
+      <ul class="main-header-navi">
+        <li><a href="#">기사</a></li>
+        <li><a href="#">산업기사</a></li>
+        <li><a href="#">기능사</a></li>
+      </ul>
+    </div>
+    <div id="main-box1"></div>
+    <section id="con1">
+      <div class="left-menu" style="max-height: 500px;">
+        <ul id="left-menu-share" class="left-menu1">
+          <li>
+            <dl>
+              <dt>
+                <div class="left-menu-name">게시판</div>
+              </dt>
+            </dl>
+          </li>
+          <div class="menu-line"></div>
+          <li>
+            <dl>
+              <dt>
+                <div>커뮤니티</div>
+              </dt>
+              <dd><a href="#">- 기사</a></dd>
+              <dd><a href="#">- 산업기사</a></dd>
+              <dd><a href="#">- 기능사</a></dd>
+            </dl>
+          </li>
+          <div class="menu-line"></div>
+          <li>
+            <dl>
+              <dt>
+                <div>장터</div>
+              </dt>
+              <dd><a href="#">- 삽니다</a></dd>
+              <dd><a href="#">- 팝니다</a></dd>
+            </dl>
+          </li>
+          <div class="menu-line"></div>
+          <li>
+            <dl>
+              <dt>
+                <div>고객센터</div>
+              </dt>
+              <dd><a href="#">- 자주 묻는 질문</a></dd>
+              <dd><a href="mailto:bs_khm@naver.com">- 1:1문의</a></dd>
+              <dd><a href="/semi_menu_qna list.html">- 신고</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+      <div class="testbox">
+        <div
+          class="tablebox"
+          style="
+            border: 1px solid lightgray;
+            border-radius: 4px;
+            padding: 10px;
+          "
+        >
+          <table
+            class="table"
+            border="0"
+            style="padding: 0; margin: 0; min-width: 1000px;"
+          >
+            <h1 style="font-family: sans-serif;">오류신고</h1>
+            <thead>
+              <tr style="text-align: left;"></tr>
+            </thead>
+            <tbody style="">
+              <tr style="">
+                <td colspan="2">
+                  <h1 style="font-size: 28px; margin: 0;">점수가 이상해요</h1>
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px lightgray solid;">
+                <td colspan="1" style="display: flex; align-items: center;">
+                  <img
+                    src="./images/alarm.png"
+                    alt=""
+                    style="
+                      border-radius: 50%;
+                      height: 50px;
+                      width: 50px;
+                      background-color: gainsboro;
+                      margin-right: 10px;
+                    "
+                  />
+                  <div
+                    class="postinfo"
+                    style="display: flex; flex-direction: column;"
+                  >
+                    <span class="user-name">보노보노</span>
+                    <span class="date1"
+                      >2020.08.07 11:45&nbsp;&nbsp;조회 9</span
+                    >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td
+                 
+                  style="
+                    min-width: 1000px;
+                    min-height: 600px;
+                    font-size: 18px;
+                    border-bottom: lightgray 1px solid;
+                  "
+                >
+                <div class="post-content">점수가 20점밖에 나오지 않아요...........</div>
+                </td>
+              </tr>
+              <tr class="tr-comment" style="">
+                <td>
+                  <div class="commentbox" style="padding: 10px;">
+                    <h1>댓글</h1>
+                    <div class="comment-view">
+                      <div class="comment" style="display: flex;">
+                        <img
+                          name="userimg"
+                          src="./images/alarm.png"
+                          style="height: 50px; width: 50px;"
+                        />
+                        <ul>
+                          <li class="user-name-comment">보노보노</li>
+                          <li class="comment-text">
+                            저는 제대로 나오던데..
+                          </li>
+                          <li class="date1">2020.08.07 11:50</li>
+                        </ul>
+                      </div>
+
+                      <div class="comment" style="display: flex;">
+                        <img
+                          name="userimg"
+                          src="./images/alarm.png"
+                          style="height: 50px; width: 50px;"
+                        />
+                        <ul>
+                          <li class="user-name-comment">짱구</li>
+                          <li class="comment-text">
+                            저도 제대로 나오던데..
+                          </li>
+                          <li class="date1">2020.08.07 11:52</li>
+                        </ul>
+                      </div>
+
+                      <div class="comment" style="display: flex;">
+                        <img
+                          name="userimg"
+                          src="./images/alarm.png"
+                          style="height: 50px; width: 50px;"
+                        />
+                        <ul>
+                          <li class="user-name-comment">통키</li>
+                          <li class="comment-text">
+                            엄
+                          </li>
+                          <li class="date1">2020.08.07 11:57</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="comment-write-box">
+                      <form action="">
+                        <textarea
+                          class="comment-write"
+                    
+                          placeholder="댓글을 입력하세요."
+                        ></textarea>
+                        <div class="comment-btn"><input type="submit" value="등록"></input></div>
+                      </form>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="paging"></div>
+        </div>
+        <div class="btns">
+          <a href="/semi_menu_qna_write.html" class="btn writeBtn"
+            ><i class="fas fa-pencil-alt"></i> 글쓰기</a
+          >
+          <a href="/semi_menu_qna list.html" class="btn writeBtn"
+            ><i class="fas fa-pencil-alt"></i> 목록</a
+          >
+        </div>
+      </div>
+    </section>
+  </body>
+  <footer id="main-footer">
+    <div class="main-footer-wrap">
+      <div><img src="./images/semiLogosize.png" /></div>
+      <div>
+        <ul>
+          <li>
+            고객센터 1544 – 1004 (평일 9:00 ~ 12:30, 13:30 ~ 18:00)
+            help@c4you.com
+          </li>
+          <li>
+            <span>㈜합격하조</span> <span>대표이사 유승제</span>
+            <span>사업자 등록번호 1004-1004</span>
+          </li>
+          <li>서울시 강남구 역삼대로</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</html>
