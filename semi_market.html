@@ -26,12 +26,7 @@
 
 
 
-<div id="main-box1">
-    <ul class="box1-navi">
-        <li><a href="#">삽니다.</a></li>
-        <li><a href="#">팝니다.</a></li>
-    </ul>
-</div>
+<div id="main-box1"></div>
 
 <!----------------------------------------------------------------------------------------------------->
 <section class="section_wrapper">
@@ -85,7 +80,7 @@
 <!-- --------------------------------------장터 글쓰기------------------------------------------------------>
 
     <div id="write" class ="right_wrapper">
-        <h1 style=" font-size: 30px; text-align: center;">글쓰기</h1>
+        <h1 id="write-title">글쓰기</h1>
         <hr>
 
 
@@ -93,10 +88,10 @@
             <div>
 
                 <label>제목 :</label>
-                <input type="text" placeholder="제목을 입력하세요." name="title" style="padding:5px 100px 0px 10px;">
+                <input type="text"  id="title" name="title" placeholder="제목을 입력하세요.">
 
                 <select id="ad">
-                    <option value="none" style="font-size: 3px">---판매 상태---</option>
+                    <option value="none" id="ad-ing" >---판매 상태---</option>
                     <option value="sale">판매중</option>
                     <option value="complete">판매완료</option>
                 </select>
@@ -104,8 +99,7 @@
 
             </div>
 
-            <textarea  name="content"  cols="40" rows="10"
-                         style="width: 800px; height: 300px; resize: none">-------------------- 새글 양식 -------------------
+            <textarea  name="content" id="content-con" cols="40" rows="10">-------------------- 새글 양식 -------------------
                 &#13;&#10; 판매 상품 : &#13;&#10; 상태 : &#13;&#10; 가격 : &#13;&#10; 연락처 : </textarea>
             <br>
             <input type="file" name="filename" accept="image/png,image/jpg,image/bmp"/>
@@ -133,7 +127,7 @@
 
 
 
-<div style="clear: both"></div>
+<!--<div  style="clear: both"></div>-->
 
 
 

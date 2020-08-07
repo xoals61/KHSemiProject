@@ -109,13 +109,25 @@
 
       .btns {
         margin-top: 50px;
+        text-align: center;
+        margin-left: 1000px;
       }
       .writeBtn {
-        text-align: right;
-        border: 1px solid black;
-        background: lightgray;
-        padding: 6px 12px;
-        border-radius: 4px;
+        /* background: yellowgreen; */
+        /* background: #ffe500; */
+        /* background-color: powderblue; */
+        /* background-color: lightblue; */
+        background-color: blanchedalmond;
+        padding: 10px 20px;
+        border-radius: 2px;
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 500;
+      }
+
+      .writeBtn .fas {
+        vertical-align: auto;
+        font-size: 18px;
       }
 
       .search-qna {
@@ -195,7 +207,7 @@
               </dt>
               <dd><a href="#">- 자주 묻는 질문</a></dd>
               <dd><a href="mailto:bs_khm@naver.com">- 1:1문의</a></dd>
-              <dd><a href="/semi_menu_qna.html">- 신고</a></dd>
+              <dd><a href="/semi_menu_qna list.html">- 신고</a></dd>
             </dl>
           </li>
         </ul>
@@ -236,6 +248,14 @@
             </tbody>
             <tbody class="postsbody">
               <tr style="">
+                <td style="width: 5%;">2</td>
+                <td style="width: 60%; text-align: left; text-indent: 10px;">
+                  <a href="/semi_menu_qna post.html"> 점수가 이상해요 </a>
+                </td>
+                <td style="width: 15%;">보노보노</td>
+                <td style="width: 15%;">2020.08.07</td>
+              </tr>
+              <tr style="">
                 <td style="width: 5%;">1</td>
                 <td style="width: 60%; text-align: left; text-indent: 10px;">
                   <a href="#"> 안녕하세요 감사해요 잘있어요 다시만나요</a>
@@ -268,7 +288,16 @@
             <input type="submit" value="검색" class="search-qna-btn" />
           </div>
           <div class="btns">
-            <a href="/semi_menu_qna_write.html" class="btn writeBtn">글쓰기</a>
+            <a href="/semi_menu_qna_write.html" class="btn writeBtn"
+              ><i class="fas fa-pencil-alt"></i> 글쓰기</a
+            >
+            <!-- <a href="/semi_menu_qna_write.html" class="btn writeBtn"
+              ><i class="fas fa-feather-alt"></i> 글쓰기</a
+            > -->
+
+            <!-- <i class="fas fa-pencil-alt"></i><i class="fas fa-edit"></i
+              ><i class="far fa-edit"></i
+              ><i class="fas fa-pen-fancy"></i> -->
           </div>
         </div>
       </div>
