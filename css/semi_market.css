@@ -75,4 +75,5 @@
 
 #main-box1{ display: flex;}
 .box1-navi { margin: auto; font-size: 15pt; height:100%;}
-.box1-navi  li{ float: left; margin-left: 400px;margin-top: 15px;display:block;}
+.box1-navi  li{ float: left; margin-left: 200px;margin-top: 15px;display:block;
+
