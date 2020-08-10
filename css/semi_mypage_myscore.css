@@ -1,0 +1,24 @@
+#score-title{
+    font-size: 30px; text-align: center;
+}
+
+
+
+#score-table{
+    align : center;
+    width: 700px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+
+
+}
+
+#score-table th {
+    background-color: #4e555b;
+}
+
+#score-table td{
+    text-align : center;
+}
