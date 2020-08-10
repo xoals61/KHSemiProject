@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="./css/semi_mypage.css">
     <link rel="stylesheet" href="./css/semi_Login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        $('.message a').click(function(){
+      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+    </script>
 </head>
 <body>
     <div id="main-header">
@@ -71,33 +77,17 @@
         </li>
     </ul>
     </div>
-    <div class="Login">
-    <div id="login_form" ><!--전체 로그인 폼을 감싸는 div-->
-        <div id="login_form_input">
-             <div id="login_input_id_pwd">
-                 <!--아이디 입력-->
-                 <div id="login_input_id">
-                     <input type="tesxt" name="input_id" id="input_id" placeholder="ID를 입력하세요.">
-                 </div>
-    
-                 <!--pwd 입력-->
-                 <div id="logint_input_pwd">
-                     <input type="password" name="input_pwd" id="input_pwd" placeholder="pwd를 입력하세요.">
-                 </div>
-             </div>
-    
-             <!--로그인 버튼 -->
-             <div id="login_input_btn">
-                <input type="submit" value="로그인" id="login_btn">
-            </div>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form">
+            <input type="text" placeholder="username"/>
+            <input type="password" placeholder="password"/>
+            <button type="button">login</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+            <p class="message">Are you Forget? <a href="#">Find ID/PWD</a></p>
+          </form>
         </div>
-            <div id="login_form_join">
-                <a href="javascript:void(0)">회원가입</a>
-                <a href="#">ID/PWD 찾기</a>
-            </div>
       </div>
-    </div>
-        
 <div id="main-footer">
     <div class="main-footer-wrap">
         <div><img src="./images/semiLogosize.png"/></div>
