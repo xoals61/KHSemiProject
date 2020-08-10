@@ -135,12 +135,26 @@
         </ul>
     </div>
 
+    <div id="signupbanner">
+        <table>
+            <tr>
+                <td>1. 회원 약관</td>
+                <td style="background: rgba(12, 93, 199, 0.603);
+                color: rgb(0, 0, 0);">2. 회원 가입</td>
+                <td>3. 회원 가입 결과</td>
+            </tr>
+        </table>
+
+
+
+    </div>
+
     <div id="signup">
         <form id="signupform" method="POST" onsubmit="return validate()" action="http://www.naver.com">
             <h1>회원가입</h1><br>
             <ul>
                 <li><label>아이디 : </label><input type="text" name="id" maxlength="20" id="id" required>&nbsp;<button
-                        onclick="">중복확인</button></li>
+                        type="button">중복확인</button></li>
                 <li><label>비밀번호 : </label><input type="password" name="password" maxlength="20" id="password" required></li>
                 <li><label>비밀번호 확인 : </label><input type="password" id="password2" name="password2" placeholder="비밀번호를 다시 입력해주세요."
                         maxlength="20"></li>
