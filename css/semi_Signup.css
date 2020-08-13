@@ -10,8 +10,6 @@
 }
 
 #signupbanner{
-    border: 1px solid rgb(255, 255, 255);
-
     min-width: 1000px;
     float: left; 
     margin-left: 5%; 
@@ -19,9 +17,8 @@
     margin-top: 5%;
     margin-bottom: 60px;
     border-radius: 0.5rem;
-    border:  rgb(96,160,211);;
-    background: rgb(96,160,211);
-    color: rgb(253, 252, 251);
+    border: 1.5px solid rgb(96,160,211);
+    color: rgb(0, 0, 0);
 }
 
 #signupbanner table{
@@ -43,7 +40,7 @@
     
 }
 #signupbanner table tr td:not(:first-child){
-    border-left: 1px rgb(255, 253, 251) solid;
+    border-left: 1.8px solid rgb(96,160,211); 
 }
 
 #signup form{
@@ -87,9 +84,9 @@
 }
 
 button{
-    background:#64b6d6;
+    background :#91d2ec;
     border: none;
-    min-width: 150px;
+    min-width: 300px;
     height: 40px;
     transition: background-color 0.5s;
     
@@ -97,6 +94,6 @@ button{
 }
 
 button:hover{
-    background: #2c6379;
+    background: #64b0ce;
 }
 
