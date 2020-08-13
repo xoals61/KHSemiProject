@@ -34,7 +34,7 @@ body{ margin: 0 auto; max-width: 1400px;min-width: 1400px;font-family:BMDOHYEON,
 
 
 /*-------------------------------------------------------------------------------------------------------------------*/
-.left-menu{zoom: 1; min-height: 250px; min-width: 200px; border: 1px solid #a7a9ab; margin : 20px 20px 20px 20px;float: left;}
+.left-menu{zoom: 1; min-height: 250px; max-width: 200px; border: 1px solid #a7a9ab; margin : 20px 20px 20px 20px;float: left;}
 .left-menu1 li{display: block;margin: 0px 20px;}
 .left-menu1 dt{font-size: 17px; font-weight: 600; margin-bottom: 10px; color: #6d6e70;}
 .left-menu1 dd{font-size: 15px; font-weight: 400; margin-bottom: 8px;}
