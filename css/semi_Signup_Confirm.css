@@ -1,24 +1,31 @@
 #signUpCompleate{
     min-width: 1000px;
 
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-bottom: 5%;
-    border: 1px black solid; float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin: auto;
+    float: left;
 }
 
 #complete{
     width: fit-content;
-    margin: auto;
     height: 300px;
-    
+    text-align: center;
+    margin: auto;
 }
 
 #complete div{
     display: inline-block;
-    width: fit-content;
+    
     margin-top: 10px;
-    
-    
     height:200px;
+}
+
+.complete>div{
+    
+}
+
+.signuplogo img{
+    margin-right: 60px;
 }

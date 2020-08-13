@@ -37,8 +37,8 @@
   color: #FFFFFF;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
+  transition: background-color 0.5s
+  
 }
 .form button:hover,.form button:active,.form button:focus {
   background: #2c6379;
