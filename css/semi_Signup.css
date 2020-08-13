@@ -15,7 +15,7 @@
     margin-left: 5%; 
     min-height: 100px;
     margin-top: 5%;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     border-radius: 0.5rem;
     border: 1.5px solid rgb(96,160,211);
     color: rgb(0, 0, 0);
@@ -46,9 +46,9 @@
 #signup form{
     border: solid 1px #a7a9ab;
     border-radius: 0.5rem;
- margin:auto;
- width: fit-content;
- padding: 3%;
+    margin:auto;
+    width: fit-content;
+    padding: 3%;
 }
 
 #signup ul{
@@ -81,19 +81,5 @@
     border: thistle;
     font-size: 15px;
     margin-left: 50px;
-}
-
-button{
-    background :#91d2ec;
-    border: none;
-    min-width: 300px;
-    height: 40px;
-    transition: background-color 0.5s;
-    
-   
-}
-
-button:hover{
-    background: #64b0ce;
 }
 
