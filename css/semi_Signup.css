@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'N';
+    src : url("아이러브우유체.ttf")
+}
 
-
+.body{
+    font-family: 'NanumSquareL';
+}
 
 #signup {
     float: left;
