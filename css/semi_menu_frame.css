@@ -33,6 +33,7 @@ body{ margin: 0 auto; max-width: 1400px;min-width: 1400px;font-family:BMDOHYEON,
 #main-box1{background-color: rgb(96,160,211); height: 55px; width: 100%; border: 2px solid rgb(96,160,211); }
 
 
+
 /*-------------------------------------------------------------------------------------------------------------------*/
 .left-menu{zoom: 1; min-height: 500px; min-width: 200px; border: 1px solid #a7a9ab; margin : 20px 20px 20px 20px;float: left;}
 .left-menu1 li{display: block;margin: 0px 20px;}
