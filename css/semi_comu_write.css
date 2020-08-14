@@ -1,3 +1,25 @@
+@font-face {
+    font-family: '나눔1';
+    src: url(NanumBarunGothicBold.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: '나눔2';
+        src: url(NanumBarunGothic.ttf) format('truetype');
+       }
+    
+    @font-face {
+    font-family: '나눔3';
+    src: url(NanumBarunGothicLight.ttf) format('truetype');
+    }
+    @font-face {
+    font-family: '나눔4';
+    src: url(NanumBarunGothicUltraLight.ttf) format('truetype');
+    }
+    
+    
+    
+    
+
 .option-type>div{float: left; margin-right: 10px;}
 .option-type{margin-bottom: 20px;}
 #category-name{height: 25px;}
