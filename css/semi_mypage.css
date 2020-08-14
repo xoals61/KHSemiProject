@@ -1,4 +1,4 @@
-@font-face {
+    @font-face {
     font-family: '나눔1';
     src: url(NanumBarunGothicBold.ttf) format('truetype');
     }
@@ -17,6 +17,21 @@
     }
     
     
+    .Nanum1{
+        font-family: '나눔1';
+    }
+
+    .Nanum2{
+        font-family: '나눔2';
+    }
+
+    .Nanum3{
+        font-family: '나눔3';
+    }
+
+    .Nanum4{
+        font-family: '나눔4';
+    }
     
     
 

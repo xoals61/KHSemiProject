@@ -16,6 +16,21 @@ font-family: '나눔4';
 src: url(NanumBarunGothicUltraLight.ttf) format('truetype');
 }
 
+.Nanum1{
+    font-family: '나눔1';
+}
+
+.Nanum2{
+    font-family: '나눔2';
+}
+
+.Nanum3{
+    font-family: '나눔3';
+}
+
+.Nanum4{
+    font-family: '나눔4';
+}
 
    
 /*---------------------------------------------header---------------------------------------------------*/
@@ -24,7 +39,7 @@ src: url(NanumBarunGothicUltraLight.ttf) format('truetype');
 a{text-decoration: none;}
 li{list-style: none; float: left;}
 
-body{ margin: 0 auto; max-width: 1400px;font-size:12px !important; }
+body{ margin: 0 auto; max-width: 1400px;font-size:12px !important;  font-family: '나눔3';}
 
 
 
