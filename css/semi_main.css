@@ -18,7 +18,7 @@ body{ margin: 0 auto; max-width: 1400px;font-family:-윤고딕520,BMDOHYEON,Nanu
 
 #main-header{zoom:1; max-width:100%; text-align:center; margin:0 auto; padding:25px 0 0 0; height: 200px; min-width: 100%;min-width: 1400px;}
 .main-header-logo{float:left; padding-top:10px;}
-.main-header-logo img{height: 170px; width: 250px;}
+.main-header-logo img{height: 100px; width: 170px;}
 .main-header-navi{float:left; left: 250px; margin-top: 70px;position: relative; min-width: 700px; margin-left: -120px;}
 .main-header-navi li{float:left; padding-right:100px; line-height:31px;}
 .main-header-navi li a{font-size:40px; color:#418dc0; font-weight:600; }
