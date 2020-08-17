@@ -29,26 +29,34 @@
 #btn-panel{
     margin-top: 30px;
     margin-bottom: 20px;
+    
+    width: 1000px;
+    
 }
 .btn-panel-a{
     font-size: 15px;
     /* color: aliceblue; */
     color: black;
     text-decoration: none;
+   
     
 }
 
 .allon{
-    border: 2px solid lightslategray;
-    display: inline-block;
-    margin: 0px auto;
+    border: 1.5px solid #64b6d6;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    float: left;
+    margin-left: 10px;
+    background:  #64b6d6;
     /* background: royalblue; */
     padding: 5px;
-    background:#64b6d6;
+    
     transition: background-color 0.5s
 }
 .allon:hover{
-    background: #2c6379;
+    background: #f6faff
 }
 .tb0{
     border: 1px solid black;
@@ -123,19 +131,18 @@ section table th{
     font-size: 23px;
 }
 .page-guide2{
-    border: 3px solid lightslategrey;
-    border-radius: 30px;
+    border: 1.5px solid  #64b6d6;
     margin: 0 auto;
     display: inline-block;
     font-size: 12px;
     color: black;
-    background: whitesmoke;
+    background:  #64b6d6;
     text-decoration: none;
     margin-top: 40px;
     padding: 10px;
-    background:#64b6d6;
+    
     transition: background-color 0.5s
 }
 .page-guide2:hover{
-    background: #2c6379;
+    background:  #f6fcff;
 }

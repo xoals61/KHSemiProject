@@ -10,9 +10,14 @@
 
 .btn{
     background:#64b6d6;
+    border: none;
     transition: background-color 0.5s
 }
 
 .btn:hover{
-   background: #2c6379;
+   background: #3b86a3;
+}
+
+#btn_group{
+    margin-top: 10px;
 }
