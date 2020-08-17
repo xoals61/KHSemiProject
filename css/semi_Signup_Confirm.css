@@ -1,3 +1,7 @@
+
+    
+    
+
 #signUpCompleate{
     min-width: 1000px;
 
@@ -29,3 +33,18 @@
 .signuplogo img{
     margin-right: 60px;
 }
+
+button{
+    background :#91d2ec;
+    border: none;
+    min-width: 300px;
+    height: 40px;
+    transition: background-color 0.5s;
+    
+   
+}
+
+button:hover{
+    background: #64b0ce;
+}
+

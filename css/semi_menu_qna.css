@@ -1,6 +1,18 @@
-@font-face {
-  font-family: "BMDOHYEON";
-  src: url(BMDOHYEON_ttf.ttf) format("truetype");
+
+  
+  
+.testbox {
+  width: 1050px;
+  min-height: 500px;
+  /* background-color: blue; */
+  float: left;
+  
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+a{
+  color: black;
 }
 
 /*---------------------------------------------header---------------------------------------------------*/

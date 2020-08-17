@@ -1,4 +1,7 @@
-﻿.section {
+﻿
+    
+    
+.section {
   font-family: 'Segoe UI',Arial,'Malgun Gothic','Gulim','sans-serif';
   /* background-color: #f0f0f0; */
   border: 1px solid #a7a9ab;
@@ -34,12 +37,18 @@
     text-decoration: none;
     
 }
+
 .allon{
     border: 2px solid lightslategray;
     display: inline-block;
     margin: 0px auto;
     /* background: royalblue; */
     padding: 5px;
+    background:#64b6d6;
+    transition: background-color 0.5s
+}
+.allon:hover{
+    background: #2c6379;
 }
 .tb0{
     border: 1px solid black;
@@ -124,5 +133,9 @@ section table th{
     text-decoration: none;
     margin-top: 40px;
     padding: 10px;
-    
+    background:#64b6d6;
+    transition: background-color 0.5s
+}
+.page-guide2:hover{
+    background: #2c6379;
 }

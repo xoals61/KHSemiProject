@@ -1,9 +1,36 @@
 @font-face {
-    font-family: '-윤고딕523';
-    src: url(-윤고딕530.ttf) format('truetype');
+font-family: '나눔1';
+src: url(NanumBarunGothicBold.ttf) format('truetype');
+}
+@font-face {
+    font-family: '나눔2';
+    src: url(NanumBarunGothic.ttf) format('truetype');
    }
 
+@font-face {
+font-family: '나눔3';
+src: url(NanumBarunGothicLight.ttf) format('truetype');
+}
+@font-face {
+font-family: '나눔4';
+src: url(NanumBarunGothicUltraLight.ttf) format('truetype');
+}
 
+.Nanum1{
+    font-family: '나눔1';
+}
+
+.Nanum2{
+    font-family: '나눔2';
+}
+
+.Nanum3{
+    font-family: '나눔3';
+}
+
+.Nanum4{
+    font-family: '나눔4';
+}
 
    
 /*---------------------------------------------header---------------------------------------------------*/
@@ -12,7 +39,7 @@
 a{text-decoration: none;}
 li{list-style: none; float: left;}
 
-body{ margin: 0 auto; max-width: 1400px;font-family:-윤고딕520,BMDOHYEON,NanumGothic, Dotum,"돋움",Gulim,"굴림",Verdana,Tahoma,Apple Gothic,sans-serif,UnDotum; font-size:12px !important; }
+body{ margin: 0 auto; max-width: 1400px;font-size:12px !important;  font-family: '나눔3';}
 
 
 

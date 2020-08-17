@@ -1,8 +1,5 @@
-@font-face {
-  font-family: "BMDOHYEON";
-  src: url(BMDOHYEON_ttf.ttf) format("truetype");
-}
 
+  
 /*---------------------------------------------header---------------------------------------------------*/
 
 a {
@@ -16,8 +13,6 @@ body {
   margin: 0 auto;
   max-width: 1400px;
   min-width: 1400px;
-  font-family: BMDOHYEON, NanumGothic, Dotum, "돋움", Gulim, "굴림", Verdana,
-    Tahoma, Apple Gothic, sans-serif, UnDotum;
   font-size: 12px !important;
 }
 

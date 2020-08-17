@@ -9,17 +9,17 @@
 </head>
 <body>
 <div id="main-header">
-    <div class="main-header-logo"><a href="#"><img src="./images/semiLogosize.png" /></a></div>
+    <div class="main-header-logo"><a href="semi_main.html"><img src="./images/semiLogosize.png" /></a></div>
     <ul id='BeforeLogin' class="main-header-login">
-        <li><a href="#">로그인</a></li>
-        <li><span>|</span><a href="/#">회원가입</a></li>
-        <li><span>|</span><a href="/#">고객센터</a></li>
+        <li><a href="semi_Login.html">로그인</a></li>
+        <li><span>|</span><a href="semi_SignupForm.html">회원가입</a></li>
+        <li><span>|</span><a href="semi_FAQ.html">고객센터</a></li>
     </ul>
 
     <ul class="main-header-navi">
-        <li><a href="#">기사</a></li>
-        <li><a href="#">산업기사</a></li>
-        <li><a href="#">기능사</a></li>
+        <li><a href="semi_comu_gisa.html">기사</a></li>
+        <li><a href="semi_comu_sanupgisa.html">산업기사</a></li>
+        <li><a href="semi_comu_ginungsa.html">기능사</a></li>
     </ul>
 
 </div>
@@ -29,68 +29,68 @@
 <div id="main-box1"></div>
 
 <!----------------------------------------------------------------------------------------------------->
-<section class="section_wrapper">
-<div class ="left_wrapper">
-    <div class="left-menu">
-        <ul id="left-menu-share" class="left-menu1">
+<section class="section_wrapper nanum1" >
+    <div class ="left_wrapper">
+        <div class="left-menu">
+            <ul id="left-menu-share" class="left-menu1">
 
-            <li>
-                <dl>
-                    <dt>
-                        <div class="left-menu-name">게시판</div>
-                    </dt>
-                </dl>
-            </li>
-            <div class="menu-line"></div>
-            <li>
-                <dl>
-                    <dt>
-                        <div>커뮤니티</div>
-                    </dt>
-                    <dd><a href="#">- 기사</a></dd>
-                    <dd><a href="#">- 산업기사</a></dd>
-                    <dd><a href="#">- 기능사</a></dd>
-                </dl>
-            </li>
-            <div class="menu-line"></div>
-            <li>
-                <dl>
-                    <dt>
-                        <div>장터</div>
-                    </dt>
-                    <dd><a href="#">- 삽니다</a></dd>
-                    <dd><a href="#">- 팝니다</a></dd>
-                </dl>
-            </li>
-            <div class="menu-line"></div>
-            <li>
-                <dl>
-                    <dt>
-                        <div>고객센터</div>
-                    </dt>
-                    <dd><a href="#">- 자주 묻는 질문</a></dd>
-                    <dd><a href="#">- 1:1문의</a></dd>
-                    <dd><a href="#">- 신고</a></dd>
-                </dl>
-            </li>
-        </ul>
+                <li>
+                    <dl>
+                        <dt>
+                            <div class="left-menu-name">게시판</div>
+                        </dt>
+                    </dl>
+                </li>
+                <div class="menu-line"></div>
+                <li>
+                    <dl>
+                        <dt>
+                            <div>커뮤니티</div>
+                        </dt>
+                        <dd><a href="semi_comu_gisa.html">- 기사</a></dd>
+                        <dd><a href="semi_comu_sanupgisa.html">- 산업기사</a></dd>
+                        <dd><a href="semi_comu_ginungsa.html">- 기능사</a></dd>
+                    </dl>
+                </li>
+                <div class="menu-line"></div>
+                <li>
+                    <dl>
+                        <dt>
+                            <div>장터</div>
+                        </dt>
+                        <dd><a href="semi_market_main.html">- 삽니다</a></dd>
+                        <dd><a href="semi_market_main.html">- 팝니다</a></dd>
+                    </dl>
+                </li>
+                <div class="menu-line"></div>
+                <li>
+                    <dl>
+                        <dt>
+                            <div>고객센터</div>
+                        </dt>
+                        <dd><a href="semi_FAQ.html">- 자주 묻는 질문</a></dd>
+                        <dd><a href="#">- 1:1문의</a></dd>
+                        <dd><a href="semi_menu_qna_error.html">- 신고</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<!-- --------------------------------------장터 글쓰기------------------------------------------------------>
+    <!-- --------------------------------------장터 글쓰기------------------------------------------------------>
 
     <div id="write" class ="right_wrapper">
-        <h1 id="write-title">글쓰기</h1>
+        <h1 class="Nanum2" id="write-title">글쓰기</h1>
         <hr>
 
 
         <form>
             <div>
 
-                <label>제목 :</label>
-                <input type="text"  id="title" name="title" placeholder="제목을 입력하세요.">
+                <label class="Nanum1">제목 :</label>
+                <input type="text"  id="title"  class="Nanum2" name="title" placeholder="제목을 입력하세요.">
 
-                <select id="ad">
+                <select id="ad" class="Nanum1">
                     <option value="none" id="ad-ing" >---판매 상태---</option>
                     <option value="sale">판매중</option>
                     <option value="complete">판매완료</option>
@@ -99,7 +99,7 @@
 
             </div>
 
-            <textarea  name="content" id="content-con" cols="40" rows="10">-------------------- 새글 양식 -------------------
+            <textarea  name="content" id="content-con" class="Nanum1" cols="40" rows="10">-------------------- 새글 양식 -------------------
                 &#13;&#10; 판매 상품 : &#13;&#10; 상태 : &#13;&#10; 가격 : &#13;&#10; 연락처 : </textarea>
             <br>
             <input type="file" name="filename" accept="image/png,image/jpg,image/bmp"/>
@@ -109,15 +109,15 @@
     </div>
 
 
-<!-- 취소/등록 버튼 -->
-     <div id="btn_group">
+    <!-- 취소/등록 버튼 -->
+    <div id="btn_group">
 
-         <button id="cancel">취소</button>
-         <button id="submit">등록</button>
+        <button class="Nanum2" id="cancel" >취소</button>
+        <button class="Nanum2" id="submit">등록</button>
 
 
 
-     </div>
+    </div>
 
 
 
