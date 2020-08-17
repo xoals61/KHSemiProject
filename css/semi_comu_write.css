@@ -7,3 +7,12 @@
 #btn_group{ width: 1200px;}
 .attachfile{float: left;}
 .can-sub-buttons{float: right; width: 240px; margin-left: 400px;}
+
+.btn{
+    background:#64b6d6;
+    transition: background-color 0.5s
+}
+
+.btn:hover{
+   background: #2c6379;
+}
