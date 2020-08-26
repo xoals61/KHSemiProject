@@ -34,3 +34,15 @@ th{height: 20px; background-color:  rgba(150, 150, 150, 0.507);}
 tr{border-right : 1px solid rgb(150,150,150); border-left : 1px solid rgb(150,150,150); }
 table{border-collapse: collapse; border-top :1px solid rgb(150,150,150); color : #494949;}
 tr a{color :  #494949;}
+
+#writeB{
+   background-color:#8ed2ec;
+   border: none;
+   height: 25px;
+   transition: background-color 0.5s;
+   margin: 0 0 10px 0;
+}
+
+#writeB:hover{
+    background: #64abc7;
+}
