@@ -22,11 +22,13 @@
 .btns{padding-left: 0px; font-size: 15px; } 
 .btns img{width: 30px; height: 25px; }
 .btns>a{padding-bottom: 50px;}
-.paging-wrap>div{float: left; }
-#countPerpage{ margin-left:}
+.paging-wrap>div{float: right; }
+.paging-wrap{margin-bottom: 50px;}
 
-.pagination{width: 800px; text-align: center;}
-.paging-view{ margin-left: 10px;}
+.pagination{width: 900px; text-align: center;}
+.pagination>button{
+    border: none;
+}
 .notice{height: 50px; background-color : #438dbf70; }
 th, td{border-bottom: 1px solid rgb(150, 150, 150);}
 td{height: 30px; }

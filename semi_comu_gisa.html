@@ -216,71 +216,50 @@
                 <td>2020-08-05</td>
                 <td>1004</td>
               </tr>
-              <tr class="posting">
-                <td>11</td>
-                <td>공부팁</td>
-                <td class="tleft td-comment"><a href="#">기능사 공부 대공개</a></td>
-                <td>태만짱</td>
-                <td>2020-08-05</td>
-                <td>1004</td>
-              </tr>
-              <tr class="posting">
-                <td>12</td>
-                <td>공부팁</td>
-                <td class="tleft td-comment"><a href="#">기능사 공부 대공개</a></td>
-                <td>태만짱</td>
-                <td>2020-08-05</td>
-                <td>1004</td>
-              </tr>
-              <tr class="posting">
-                <td>13</td>
-                <td>공부팁</td>
-                <td class="tleft td-comment"><a href="#">기능사 공부 대공개</a></td>
-                <td>태만짱</td>
-                <td>2020-08-05</td>
-                <td>1004</td>
-              </tr>
-              <tr class="posting">
-                <td>14</td>
-                <td>공부팁</td>
-                <td class="tleft td-comment"><a href="#">기능사 공부 대공개</a></td>
-                <td>태만짱</td>
-                <td>2020-08-05</td>
-                <td>1004</td>
-              </tr>
-              <tr class="posting">
-                <td>15</td>
-                <td>공부팁</td>
-                <td class="tleft td-comment"><a href="#">기능사 공부 대공개</a></td>
-                <td>태만짱</td>
-                <td>2020-08-05</td>
-                <td>1004</td>
-              </tr>
-              <tr class="posting">
-                <td>16</td>
-                <td>공부팁</td>
-                <td class="tleft td-comment"><a href="#">기능사 공부 대공개</a></td>
-                <td>태만짱</td>
-                <td>2020-08-05</td>
-                <td>1004</td>
-              </tr>
           </tbody>
         </table>
     </div>
     <div class="paging-wrap">
-        <div class="paging-view">
-            <select id="countPerpage">
-                <option value="5" selected>5개씩 보기</option>
-                <option value="10" >10개씩 보기</option>
-                <option value="20" >20개씩 보기</option>
-            </select>
-        </div>
-        <div class="pagination" id="paging-link">
-            <a class="page-on"><strong>1</strong></a>
-            <a href="javascript:handleList(2);">2 <span></span></a>
-        </div>
         <div class="writeBtn">
             <input type="button" id="writeB" value="글쓰기">
+        </div>
+        <div class="pagination" id="paging-link">
+            <button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=1'"><<</button>
+			<button disabled>이전</button>
+			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%=currentPage - 1 %>'">이전</button>
+			<button disabled></button>
+			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%= p %>'"></button>
+		    <button disabled>다음</button>
+			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%=currentPage + 1 %>'">다음</button>
+			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%= maxPage %>'">>></button>
+            
+            
+            <!-- 아래 코드 보고 위에서 첨삭한것,,!
+                <button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=1'"><<</button>
+			<%  if(currentPage <= 1){  %>
+			<button disabled><</button>
+			<%  }else{ %>
+			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%=currentPage - 1 %>'"><</button>
+			<%  } %>
+			
+			<% for(int p = startPage; p <= endPage; p++){
+					if(p == currentPage){	
+			%>
+				<button disabled><%= p %></button>
+			<%      }else{ %>
+				<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%= p %>'"><%= p %></button>
+			<%      } %>
+			<% } %>
+				
+			<%  if(currentPage >= maxPage){  %>
+			<button disabled>></button>
+			<%  }else{ %>
+			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%=currentPage + 1 %>'">></button>
+			<%  } %>
+			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%= maxPage %>'">>></button>
+
+            -->
+		</div>
         </div>
     </div>
     </div>
