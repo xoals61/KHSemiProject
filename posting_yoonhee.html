@@ -77,7 +77,7 @@
 <!-- sub-right-content start -->
 <div class="sub-right-content">
 	<div class="page-title Nanum2">게시판</div>  
-	<div class="left pb5 mr5" ><a href="#" class="btn3" >목록</a></div>
+	<div class="left pb5 mr5"><a href="#" class="btn3">목록</a></div>
 	<div class="left pb5 mr5"><a href="#" class="btn3">수정</a></div>
 	
 		
@@ -97,7 +97,7 @@
 				<tr>
 					<th class="tcenter vm">제목</th>
 				
-					<td colspan="3" class="pl20" style="border-right: 1.7px solid black;">
+					<td colspan="3" class="pl20" style="border-right: 1.3px solid black;">
 						반윤희는 정말 수지인가요?.&nbsp;/&nbsp;안산중앙중
 					</td>
 					<th class="tcenter vm" >첨부파일</th>
@@ -155,12 +155,12 @@
 
 	<div id="replySelectArea">
 		<table id="replySelectTable">
-			<tr style="border: 1px solid rgb(160, 160, 160); background: skyblue;">
+			<tr style="border: 1px solid rgb(160, 160, 160); background: rgb(200, 233, 247);">
 			  
 			  <td><b>댓글</b></td>
 			  <td colspan="2" style="width: 700px;">2020-08-10</td>
 
-			  <td style="text-align: left;">
+			  <td style="text-align: right;">
 
 			  <input type="hidden" name="cno" value="<%=bco.getCno()%>"/ ">
 							  
@@ -173,15 +173,7 @@
 							
 						<button type="button" class="deleteBtn"
 							onclick="deleteReply(this);">삭제</button>
-
-						<button type="button" class="insertBtn"
-						onclick="deleteReply(this);" style="display:none;>댓글달기</button>
-
-						<button type="button" class="insertConfirm"
-						onclick="reConfirm(this);"
-						style="display:none;">등록</button>
 						</td>
-
 						<tr class="comment replyList<%=bco.getClevel()%>">
 							<td style="width: 100px; font-size: 15px;">설윤희 : </td>
 							<td colspan="2" style="background : transparent;">
