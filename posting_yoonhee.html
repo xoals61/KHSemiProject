@@ -160,7 +160,7 @@
 			  <td><b>댓글</b></td>
 			  <td colspan="2" style="width: 700px;">2020-08-10</td>
 
-			  <td style="text-align: right;">
+			  <td style="text-align: left;">
 
 			  <input type="hidden" name="cno" value="<%=bco.getCno()%>"/ ">
 							  
@@ -173,7 +173,15 @@
 							
 						<button type="button" class="deleteBtn"
 							onclick="deleteReply(this);">삭제</button>
+
+						<button type="button" class="insertBtn"
+						onclick="deleteReply(this);" style="display:none;>댓글달기</button>
+
+						<button type="button" class="insertConfirm"
+						onclick="reConfirm(this);"
+						style="display:none;">등록</button>
 						</td>
+
 						<tr class="comment replyList<%=bco.getClevel()%>">
 							<td style="width: 100px; font-size: 15px;">설윤희 : </td>
 							<td colspan="2" style="background : transparent;">

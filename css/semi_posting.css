@@ -38,6 +38,7 @@ td{
 #replySelectArea button{
     background: none;
     border:none;
+    text-align: left;
 }
 
 .reply-content{
