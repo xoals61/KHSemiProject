@@ -45,7 +45,7 @@
     
 }
 #signupbanner table tr td:not(:first-child){
-    border-left: 1.8px solid rgb(96,160,211); 
+    border-left: 1.4px solid rgb(128, 128, 128); 
 }
 
 #signup form{
@@ -123,11 +123,13 @@
 #reconfirm{
     height: 24px;
     border: none;
-    background: rgb(219, 217, 214);
-    transition: background-color 0.5s
+    background: rgb(231, 231, 231);
+    transition: background-color 0.5s;
+    width: 68px;
 }
 
+
 #reconfirm:hover{
-    background: rgb(185, 181, 176);
+    background: rgb(202, 200, 197);
     
 }

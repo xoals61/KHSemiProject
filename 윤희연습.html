@@ -1,42 +1,144 @@
-<%@page import="com.kh.semi.comubaord.model.vo.ComuBoard"%>
-<%@page import="com.kh.semi.comubaord.model.vo.PageInfo"%>
-<%@page import="com.kh.semi.comuboardComment.model.vo.comuboardComment"%>
-<%@page import="com.kh.semi.member.vo.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="java.util.ArrayList"%>
-
-<%
-   Member m = (Member)session.getAttribute("member");
-   ComuBoard b = (ComuBoard)request.getAttribute("board");
-   // 댓글 리스트
-   ArrayList<comuboardComment> clist
-     = (ArrayList<comuboardComment>)request.getAttribute("clist");
-%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+
 <head>
 <meta charset="UTF-8">
 <title>C4U 너만의 기사</title>
-	<link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/semi_menu_frame.css">
-	<link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/semi_posting.css">
-    <link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/semi_user.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./css/semi_menu_frame.css">
+<link rel="stylesheet" href="./css/semi_Signup.css">
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	function validate() {
+		var id = document.getElementById('id');
+		var pass = document.getElementById('password');
+		var pass1 = document.getElementById('password2');
+		var name = document.getElementById('name');
+		var email = document.getElementById('email');
+
+		// 이메일 검사
+		// 4글자 이상이 나오고
+		// @가 나오고 1글자 이상 주소 . 글자1~3
+		if (!chk(/^[\w]{4,}@[\w]+(\.[\w]+){1,3}$/, email, "이메일 형식에 어긋납니다.")) {
+			return false;
+		}
+
+		// 아이디 검사
+		// 첫글자는 반드시 영문 소문자, 총 4~12자로 이루어지고
+		// 숫자가 반드시 하나 이상 포함되어야 한다.
+		// 영문 소문자와 숫자로 이루어져야 한다.
+		if (!chk(/^[a-z][a-z\d]{3,11}$/, id, "아이디의 첫글자는 영문 소문자, 4~12자 입력할 것!")) {
+			return false;
+		}
+		if (!chk(/[0-9]/, id, "아이디에 숫자 하나 이상 포함!")) {
+			return false;
+		}
+
+		if (document.getElementById("idDuplication").value != "idCheck") {
+			alert("아이디 중복체크를 해주세요.");
+			return false;
+		}
+
+		// 비밀번호 확인 검사
+		// 비밀번호와 비밀번호 확인 값이 일치
+		if (pass.value != pass1.value) {
+			alert('비밀번호 확인!');
+			return false;
+		}
+
+		// 이름 검사
+		// 2글자 이상, 한글만
+		if (!chk(/^[가-힣]{2,}$/, name, "이름은 한글로 2글자 이상을 넣으세요!")) {
+			return false;
+		}
+
+		return true;
+	}
+	function chk(re, ele, msg) {
+		if (re.test(ele.value)) {
+			return true;
+		} else {
+			alert(msg);
+
+			// return false;
+		}
+	}
+
+	function openIdChk() {
+		window.name = "parentForm";
+		window.open("./IdCheckForm.jsp", "signupform",
+				"width=500, height=300,resizable=no,scrollbars=no")
+
+	}
+	function inputIdChk() {
+		document.signupform.idDuplication.value = "idUncheck";
+
+	}
+	function addrSearch() {
+		new daum.Postcode(
+				{
+					oncomplete : function(data) {
+						// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+						// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+						var fullAddr = ''; // 최종 주소 변수
+						var extraAddr = ''; // 조합형 주소 변수
+
+						// 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+						if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+							fullAddr = data.roadAddress;
+
+						} else { // 사용자가 지번 주소를 선택했을 경우(J)
+							fullAddr = data.jibunAddress;
+						}
+
+						// 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+						if (data.userSelectedType === 'R') {
+							//법정동명이 있을 경우 추가한다.
+							if (data.bname !== '') {
+								extraAddr += data.bname;
+							}
+							// 건물명이 있을 경우 추가한다.
+							if (data.buildingName !== '') {
+								extraAddr += (extraAddr !== '' ? ', '
+										+ data.buildingName : data.buildingName);
+							}
+							// 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+							fullAddr += (extraAddr !== '' ? ' (' + extraAddr
+									+ ')' : '');
+						}
+
+						$('#address1').val(fullAddr);
+
+						// 커서를 상세주소 필드로 이동한다.
+						$('#address2').focus();
+					}
+				}).open();
+	};
+</script>
+
+
+
+
 </head>
+
 <body>
 	<div id="main-header">
 		<div class="main-header-logo">
-			<a href="<%= request.getContextPath()%>/semi_main.jsp"><img
-				src="/Semi/resources/images/semiLogosize.png" /></a>
+			<a href="<%= request.getContextPath()%>/semi_main.jsp"><img src="../../resources/images/semiLogosize.png" /></a>
 		</div>
 		<ul id='BeforeLogin' class="main-header-login">
-			<li><a href="#">로그인</a></li>
-			<li><span>|</span><a href="/#">회원가입</a></li>
+			<li><a href="view/member/semi_Login.jsp">로그인</a></li>
+			<li><span>|</span><a href="view/member/semi_SignupForm.jsp">회원가입</a></li>
 			<li><span>|</span><a href="/#">고객센터</a></li>
 		</ul>
 
 		<ul class="main-header-navi">
-			<li><a href="<%=request.getContextPath()%>/comuboardlist.bo">기사</a></li>
+			<li><a href="#">기사</a></li>
 			<li><a href="#">산업기사</a></li>
 			<li><a href="#">기능사</a></li>
 		</ul>
@@ -66,10 +168,10 @@
 						<a href="<%=request.getContextPath()%>/comuboardlist.bo">- 기사</a>
 					</dd>
 					<dd>
-						<a href="#">- 산업기사</a>
+						<a href="<%=request.getContextPath()%>/SGScomuboardlist.bo">- 산업기사</a>
 					</dd>
 					<dd>
-						<a href="#">- 기능사</a>
+						<a href="<%=request.getContextPath()%>/GScomuboardlist.bo">- 기능사</a>
 					</dd>
 				</dl>
 			</li>
@@ -79,12 +181,8 @@
 					<dt>
 						<div>장터</div>
 					</dt>
-					<dd>
-						<a href="#">- 삽니다</a>
-					</dd>
-					<dd>
-						<a href="#">- 팝니다</a>
-					</dd>
+				<dd><a href="<%=request.getContextPath()%>/buymarketList.bo">- 삽니다</a></dd>
+              	<dd><a href="<%=request.getContextPath()%>/marketselectList.bo">- 팝니다</a></dd>
 				</dl>
 			</li>
 			<div class="menu-line"></div>
@@ -106,178 +204,100 @@
 			</li>
 		</ul>
 	</div>
-	<% if(m != null ) { %>
-	<div class="sub-right-content" >
-		<div class="page-title Nanum2">게시판</div>
-		<div class="left pb5 mr5">
-			<a href="<%=request.getContextPath()%>/comuboardlist.bo" class="btn3">목록</a>
-		</div>
-		<div class="left pb5 mr5">
-			<a href="#" class="btn3">수정</a>
-		</div>
 
-		<div class="table-wrap">
-			<table class="tstyle2" style="word-break: break-all">
-				<colgroup>
-					<col width="12%" />
-					<col width="25%" />
-					<col width="12%" />
-					<col width="25%" />
-					<col width="12%" />
-					<col width="" />
-				</colgroup>
-				<tbody>
-					<tr>
-						<th class="tcenter vm">제목</th>
+	<div id="signupbanner">
+		<table>
+			<tr>
+				<td>1. 회원 약관</td>
+				<td
+					style="background: rgba(12, 93, 199, 0.603); color: rgb(0, 0, 0);">2.
+					회원 가입</td>
+				<td>3. 회원 가입 결과</td>
+			</tr>
+		</table>
 
-						<td colspan="3" class="pl20"
-							style="border-right: 1.7px solid black;"><%= b.getBtitle() %>
-						</td>
-						<% if(b.getBoardfile() != null && b.getBoardfile().length() > 0) { %>
-						<th class="tcenter vm">첨부파일</th>
-						<td class="pl20"><a
-							href="<%= request.getContextPath()%>/resources/boardUploadFiles/<%=b.getBoardfile() %>"
-							download="<%= b.getBoardfile() %>"> <%=b.getBoardfile() %>
-						</a> <%=b.getBoardfile() %></td>
-						<% } %>
-					</tr>
-					<tr>
-						<th class="tcenter vm">작성자</th>
-						<td class="pl20 r-noline"><span class="darkgray pr20"><%= b.getBwriter() %></span></td>
-						<th class="tcenter vm">작성일</th>
-						<td class="pl20 r-noline"><%= b.getBdate() %></td>
-						<th class="tcenter vm">조회수</th>
-						<td class="pl20"><%= b.getBcount() %></td>
-					</tr>
-				</tbody>
-			</table>
-			<table class="tstyle2" style="word-break: break-all">
-				<colgroup>
-					<col width="" />
-				</colgroup>
-				<tbody>
-					<tr>
-						<td class="t-noline l-line">
-							<div class="bbs-content" id="content">
-								<p id="content"></p>
-							</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
 
-		<div class="replyArea">
-			<div class="replyWriteArea">
-				<form action="<%= request.getContextPath()%>/CinsertComment.bo" method="post">
-					<input type="hidden" name="writer" value="<%=m.getUserId()%>" /> <input
-						type="hidden" name="bno" value="<%=b.getBno() %>" /> <input
-						type="hidden" name="refcno" value="0" /> <input type="hidden"
-						name="clevel" value="1" />
+	</div>
 
-					<table align="center">
-						<tr>
-							<td>댓글 작성</td>
-							<td><textArea rows="3" cols="80" id="replyContent"
-									name="replyContent"></textArea></td>
-							<td><button type="submit" id="addReply">댓글 등록</button></td>
-						</tr>
-					</table>
-				</form>
+	<div id="signup">
+		<form id="signupform" name="signupform" method="POST"
+			onsubmit="return validate()"
+			action="${pageContext.request.contextPath}/signup.do">
+			<h1>회원가입</h1>
+			<br>
+			<ul>
+				<li id="label1"><label>ID</label>
+					<input type="text" name="id" maxlength="20" id="id" required>&nbsp;
+					<button type="button" onclick="openIdChk()" id="reconfirm">중복확인</button> <input
+					type="hidden" name="idDuplication" id="idDuplication"
+					value="idUncheck"></li>
+				<li><label>Password</label>
+					 <input type="password" name="password" maxlength="20"
+					id="password" required></li>
+				<li><label>Confirm Password</label> <input type="password"
+					id="password2" name="password2" placeholder="비밀번호를 다시 입력해주세요."
+					maxlength="20"></li>
+				<li><label>Name</label>
+					<input id="name" type="text" name="name" maxlength="4" required></li>
+				<li><label>E-mail</label>
+					<input id="email" type="email" name="email" maxlength="30"
+					required></li>
+				<li id="label1"><label> Address</label>
+					<input id="address" type="text" name="address1" maxlength="100"required>&nbsp;
+					<button type="button" onclick="addrSearch();" id=reconfirm>검색</button>
+					
+					</li>
+					
+
+				<li><label>Detailed address
+				</label><input id="address2" type="text" name="address2" maxlength="100"
+					required></li>
+			</ul>
+			<br>
+			<div id="btn">
+				<input type="submit" value="완료">&nbsp;&nbsp;<input
+					type="reset" value="취소">
 			</div>
- <div class="comment">
- 
-         <div class="replyWriteArea">
-            <form action="#" method="post">
-               <input type="hidden" name="writer" value="<%=m.getUserId()%>" /> 
-               <input type="hidden" name="bno" value="<%=b.getBno() %>" />
-                <input type="hidden" name="refcno" value="0" />
-                <input type="hidden" name="clevel" value="1" />
-               <table class="writeC">
-                  <tr>
-                     <td>댓글 작성 :</td>
-                     <td id="txt"><textArea rows="3" cols="80" id="replyContent"
-                           name="replyContent"></textArea></td>
-                     <td><button type="submit" id="addReply">댓글 등록</button></td>
-                  </tr>
-               </table>
-            </form>
-         </div>
+		</form>
 
-         <div id="replySelectArea">
-           
-            <table id="replySelectTable"
-               style="margin-left : <%= (bco.getClevel()-1) * 15 %>px;
-                   width : <%= 800 - ((bco.getClevel()-1) * 15)%>px;"
-               class="replyList<%=bco.getClevel()%>">
-               
-               <tr style="border: 1px solid rgb(160, 160, 160); background: skyblue;">
-                  <td><b>댓글</b></td>
-                  <td colspan="2" style="width: 700px;"><%= bco.getCdate() %></td>
 
-                  <td style="text-align: right;"><input type="hidden"
-                     name="cno" value="<%=bco.getCno()%>"/ ">
-                     
-                  <%if(m.getUserId().equals(bco.getCwriterId())) { %>
-                  <input type="hidden" name="cno" value="<%=bco.getCno()%>"/>
-                  
-                     <button type="button" class="updateBtn"
-                        onclick="updateReply(this);">수정</button>
+	</div>
 
-                     <button type="button" class="updateConfirm"
-                        onclick="updateConfirm(this);" style="display: none;">저장</button>
-                     &nbsp;&nbsp;
 
-                     <button type="button" class="deleteBtn"
-                        onclick="deleteReply(this);">삭제</button>
-                        <% } else if( bco.getClevel() < 3) { %>
-                        <input type="hidden" name="writer" value="<%=m.getUserId()%>"/>
-                  <input type="hidden" name="refcno" value="<%= bco.getCno() %>" />
-                  <input type="hidden" name="clevel" value="<%=bco.getClevel() %>" />
-                  <button type="button" class="insertBtn" 
-                      onclick="reComment(this);">댓글 달기</button>&nbsp;&nbsp;
-                      
-                  <button type="button" class="insertConfirm"
-                     onclick="reConfirm(this);"
-                     style="display:none;" >등록</button> 
-                     
-               <% } %>
-               </td>
-            </tr>
-                        
-               <tr class="comment replyList<%=bco.getClevel()%>">
-                  <td style="width: 100px; font-size: 15px;"><%= bco.getCwriter() %> :</td>
-                  <td colspan="2" style="background: transparent;"><textarea
-                        class="reply-content" cols="105" rows="1" readonly="readonly"><%= bco.getCcontent() %></textarea>
-                  </td>
-                  <td></td>
-               </tr>
-            </table>
-            
-			<% } } else { %>
-			<p>현재 등록된 댓글이 없습니다.<br>
-			   첫 댓글의 주인공이 되어 보세요!</p>
-			<% } %>
-         </div>
-      </div>
-   </div>
-  </div>
-   <div id="main-footer">
-      <div class="main-footer-wrap">
-         <div>
-            <img
-               src="<%= request.getContextPath()%>/resources/images/semiLogosize.png" />
-         </div>
-         <div>
-            <ul>
-               <li>고객센터 1544 – 1004 (평일 9:00 ~ 12:30, 13:30 ~ 18:00)
-                  help@c4you.com</li>
-               <li><span>㈜합격하조</span> <span>대표이사 유승제</span> <span>사업자
-                     등록번호 1004-1004</span></li>
-               <li>서울시 강남구 역삼대로</li>
-            </ul>
-         </div>
-      </div>
-   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="main-footer">
+		<div class="main-footer-wrap">
+			<div>
+				<img src="../../resources/images/semiLogosize.png" />
+			</div>
+			<div>
+				<ul>
+					<li>고객센터 1544 – 1004 (평일 9:00 ~ 12:30, 13:30 ~ 18:00)
+						help@c4you.com</li>
+					<li><span>㈜합격하조</span> <span>대표이사 유승제</span> <span>사업자
+							등록번호 1004-1004</span></li>
+					<li>서울시 강남구 역삼대로</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
 </body>
+
 </html>
